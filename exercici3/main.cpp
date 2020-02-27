@@ -12,6 +12,8 @@
  */
 
 #include <cstdlib>
+#include<iostream>
+#include <vector>
 
 using namespace std;
 
@@ -19,7 +21,38 @@ using namespace std;
  * 
  */
 int main(int argc, char** argv) {
+    ::string nombre;
+    int opcion = 2;
+    vector<string> arr_opcion = {"Salir", "Introducir circulo"};
+    arr_opcion.size();
+
+    ::cout << "Hola como te llamas? \n";
+    ::cin>> nombre;
+
+
+
+    do {
+        cout << "Hola " << nombre << " que quieres hacer?\n";
+        for (int i = 0; i < 7; i++) {
+            ::cout << i << ". " << arr_opcion[i] << "\n";
+        }
+
+        ::cin>> opcion;
+        opcion--;
+
+        switch (opcion) {
+            case 1:
+                ::cout << "Bienvenido al curso de Estructura de Datos" << nombre << "\n";
+                break;
+            case 2:
+                ::cout << "Corrige tu nombre\n";
+                cin>>nombre;
+                break;
+        }
+
+
+    } while (opcion != 0);
+    cout << "***FIN***\n";
 
     return 0;
 }
-
