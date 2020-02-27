@@ -6,7 +6,7 @@
 
 /* 
  * File:   Circle.h
- * Author: migue
+ * Author: miguel huayllas
  *
  * Created on 27 de febrero de 2020, 12:24
  */
@@ -15,11 +15,10 @@
 #define CIRCLE_H
 
 class Circle {
+    int area;
 public:
-    Circle();
-    Circle(const Circle& orig);
-    virtual ~Circle();
-    getArea();
+    Circle(int a);
+    double getArea();
 
 };
 

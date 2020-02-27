@@ -13,13 +13,14 @@
 
 #include "Circle.h"
 
-Circle::Circle() {
+
+Circle::Circle(int a) {
+     area(a);
+     //area=a;
 }
 
-Circle::Circle(const Circle& orig) {
+Circle::getArea() {
+    const double PI = 3.141592653589793238463;
+    return area * area*PI;
 }
-
-Circle::~Circle() {
-}
-
 

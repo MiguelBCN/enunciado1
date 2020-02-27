@@ -15,24 +15,26 @@
 #include<iostream>
 #include <vector>
 
+#include "Circle.h"
+
 using namespace std;
 
 /*
  * 
  */
 int main(int argc, char** argv) {
-    ::string nombre;
+
     int opcion = 2;
+    int area;
     vector<string> arr_opcion = {"Salir", "Introducir circulo"};
     arr_opcion.size();
 
-    ::cout << "Hola como te llamas? \n";
-    ::cin>> nombre;
+
 
 
 
     do {
-        cout << "Hola " << nombre << " que quieres hacer?\n";
+        cout << "Hola "  << " que quieres hacer?\n";
         for (int i = 0; i < 7; i++) {
             ::cout << i << ". " << arr_opcion[i] << "\n";
         }
@@ -42,11 +44,14 @@ int main(int argc, char** argv) {
 
         switch (opcion) {
             case 1:
-                ::cout << "Bienvenido al curso de Estructura de Datos" << nombre << "\n";
+                cout<<"Radi?\n";
+                cin>>area;
+                Circle circulo=new Circle(area);
+                cout<<"El area del circulo es "<<circulo.getArea()<<"\n";
+                ::cout << "\n";
                 break;
-            case 2:
-                ::cout << "Corrige tu nombre\n";
-                cin>>nombre;
+            default:
+                cout<<"Opcion no valida\n";
                 break;
         }
 
