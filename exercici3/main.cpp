@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 
 /* 
  * File:   main.cpp
@@ -11,50 +6,49 @@
  * Created on 26 de febrero de 2020, 22:28
  */
 
-#include <cstdlib>
+
 #include<iostream>
 #include <vector>
-
 #include "Circle.h"
+
 
 using namespace std;
 
-/*
- * 
- */
-int main(int argc, char** argv) {
 
-    int opcion = 2;
+int main() {
+
+    int opcion;
     int area;
     vector<string> arr_opcion = {"Salir", "Introducir circulo"};
-    arr_opcion.size();
-
-
 
 
 
     do {
         cout << "Hola "  << " que quieres hacer?\n";
-        for (int i = 0; i < 7; i++) {
-            ::cout << i << ". " << arr_opcion[i] << "\n";
+        for (int i = 0; i < arr_opcion.size(); i++) {
+            cout << i+1 << ". " << arr_opcion[i] << "\n";
         }
 
-        ::cin>> opcion;
-        opcion--;
+        cin>> opcion;
+        
 
         switch (opcion) {
             case 1:
+                opcion=0;
+            case 2:
+                
                 cout<<"Radi?\n";
                 cin>>area;
-                Circle circulo=new Circle(area);
-                cout<<"El area del circulo es "<<circulo.getArea()<<"\n";
-                ::cout << "\n";
+                
+                //Creamos el objeto 
+                Circle circulo(area);
+                try{
+                cout<<"El area del circulo es "<<circulo.getArea()<<"\n";}
+                catch(const std::invalid_argument& e){
+                cout<<"Error numerico\n";}
                 break;
-            default:
-                cout<<"Opcion no valida\n";
-                break;
+       
         }
-
 
     } while (opcion != 0);
     cout << "***FIN***\n";

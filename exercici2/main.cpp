@@ -1,5 +1,4 @@
 
-
 /* 
  * File:   main.cpp
  * Author: Miguel Huyllas
@@ -13,41 +12,44 @@
 
 using namespace std;
 
-/*
- * 
- */
-int main(int argc, char** argv) {
-    ::string nombre;
+int main() {
+    string nombre;
     int opcion = 2;
-    vector<string> arr_opcion = {"Salir", "Bienvenido", "Redifinar el nombre"};
-    arr_opcion.size();
+    vector<string> arr_opcion;
 
-    ::cout << "Hola como te llamas? \n";
-    ::cin>> nombre;
+    arr_opcion.push_back("Salir");
+    arr_opcion.push_back("Bienvenido");
+    arr_opcion.push_back("Redifinar el nombre");
+
+    cout << "Hola como te llamas? \n";
+    cin>> nombre;
 
 
 
     do {
         cout << "Hola " << nombre << " que quieres hacer?\n";
-        for (int i = 0; i < 7; i++) {
-            ::cout << i << ". " << arr_opcion[i] << "\n";
+
+        for (int i = 0; i < arr_opcion.size(); i++) {
+            cout << i + 1 << ". " << arr_opcion[i] << "\n";
         }
 
-        ::cin>> opcion;
-        opcion--;
+        cin>> opcion;
 
         switch (opcion) {
             case 1:
-                ::cout << "Bienvenido al curso de Estructura de Datos" << nombre << "\n";
-                break;
+                opcion = 0;
+                break ;
             case 2:
-                ::cout << "Corrige tu nombre\n";
+                cout << "Bienvenido al curso de Estructura de Datos" << nombre << "\n\n";
+                break;
+            case 3:
+                cout << "Corrige tu nombre\n";
                 cin>>nombre;
                 break;
         }
 
 
     } while (opcion != 0);
-
+    cout << "***FIN***\n";
     return 0;
 }
