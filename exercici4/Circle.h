@@ -8,7 +8,7 @@
 
 
 class Circle {
-    int radio;
+    int area;
 public:
     Circle(int a);
     double getArea();

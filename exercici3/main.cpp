@@ -6,38 +6,56 @@
  * Created on 26 de febrero de 2020, 22:28
  */
 
-#include <cstdlib>
+
 #include<iostream>
 #include <vector>
-
 #include "Circle.h"
 
-using namespace std;
 
-/*
- * 
- */
+using namespace std;
+int opcion;
+int contador = 0;
+int area;
+vector<string> arr_opcion = {"Salir", "Introducir circulo"};
+
+void introducirCirculo(int &contador) {
+    contador++;
+    cout << "Circulo numero " << contador << "\n";
+
+    cout << "Radi?\n";
+    cin>>area;
+
+    //Creamos el objeto 
+    Circle circulo(area);
+
+    cout << "El area del circulo es " << circulo.getArea() << "\n";
+}
+
 int main() {
 
-    int opcion = 2;
-    int radio;
-    vector<string> arr_opcion;
-    arr_opcion.push_back("Sortir");
-    arr_opcion.push_back("Introducir circulo");
-
-
-    do{
-    cout<< "Hola que quieres hacer?\n";
-    for (int i = 0; i < 7; i++) {
-            cout << i << ". " << arr_opcion[i] << "\n";
+    do {
+        cout << "Hola " << " que quieres hacer?\n";
+        for (int i = 0; i < arr_opcion.size(); i++) {
+            cout << i + 1 << ". " << arr_opcion[i] << "\n";
         }
-    
-    cin>>opcion;
-    cout<<opcion;
-    }while(opcion!=0);
-    
+
+        cin>> opcion;
+
+        switch (opcion) {
+            case 1:
+                opcion = 0;
+                break;
+            case 2:
+                introducirCirculo(contador);
+                break;
+
+        }
+
+    } while (opcion != 0);
     cout << "***FIN***\n";
     
 
     return 0;
+
+
 }
