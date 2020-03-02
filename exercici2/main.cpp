@@ -16,18 +16,17 @@ using namespace std;
 /*
  * 
  */
-int main(int argc, char** argv) {
-    ::string nombre;
+int main() {
+    string nombre;
     int opcion = 2;
     vector<string> arr_opcion = {"Salir", "Bienvenido", "Redifinar el nombre"};
-    arr_opcion.size();
+    //arr_opcion.size();
 
-    ::cout << "Hola como te llamas? \n";
-    ::cin>> nombre;
+    cout << "Hola como te llamas? \n";
+    cin>> nombre;
 
 
-
-    do {
+ do {
         cout << "Hola " << nombre << " que quieres hacer?\n";
         for (int i = 0; i < 7; i++) {
             ::cout << i << ". " << arr_opcion[i] << "\n";
@@ -49,5 +48,6 @@ int main(int argc, char** argv) {
 
     } while (opcion != 0);
 
+   
     return 0;
 }

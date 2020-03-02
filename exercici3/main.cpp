@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 
 /* 
  * File:   main.cpp
@@ -22,42 +17,27 @@ using namespace std;
 /*
  * 
  */
-int main(int argc, char** argv) {
+int main() {
 
     int opcion = 2;
-    int area;
-    vector<string> arr_opcion = {"Salir", "Introducir circulo"};
-    arr_opcion.size();
+    int radio;
+    vector<string> arr_opcion;
+    arr_opcion.push_back("Sortir");
+    arr_opcion.push_back("Introducir circulo");
 
 
-
-
-
-    do {
-        cout << "Hola "  << " que quieres hacer?\n";
-        for (int i = 0; i < 7; i++) {
-            ::cout << i << ". " << arr_opcion[i] << "\n";
+    do{
+    cout<< "Hola que quieres hacer?\n";
+    for (int i = 0; i < 7; i++) {
+            cout << i << ". " << arr_opcion[i] << "\n";
         }
-
-        ::cin>> opcion;
-        opcion--;
-
-        switch (opcion) {
-            case 1:
-                cout<<"Radi?\n";
-                cin>>area;
-                Circle circulo=new Circle(area);
-                cout<<"El area del circulo es "<<circulo.getArea()<<"\n";
-                ::cout << "\n";
-                break;
-            default:
-                cout<<"Opcion no valida\n";
-                break;
-        }
-
-
-    } while (opcion != 0);
+    
+    cin>>opcion;
+    cout<<opcion;
+    }while(opcion!=0);
+    
     cout << "***FIN***\n";
+    
 
     return 0;
 }
