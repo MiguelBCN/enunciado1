@@ -20,6 +20,7 @@ class Ellipse {
 public:
     Ellipse(float a,float b);
      double getArea();
+     void getRadi();
 
 private:
 

@@ -9,13 +9,13 @@
 #include "Circle.h"
 
 
-Circle::Circle(int a) {
+Circle::Circle(float a) {
      //area(a);
      area=a;
 }
 
 double Circle::getArea() {
-    const double PI = 3.141592653589793238463;
+    const double PI = 3.1415926535897932;
     return double(area * area*PI);
 }
 

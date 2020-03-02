@@ -12,14 +12,22 @@
  */
 
 #include "Ellipse.h"
+#include<iostream>
+using namespace std;
 
-Ellipse::Ellipse(int a, int b) {
-    radi1=a;
-    radi2=b;
-    
+Ellipse::Ellipse(float a, float b) {
+    radi1 = a;
+    radi2 = b;
+
 }
-double Ellipse::getArea(){
-return radi1*radi2;
+
+double Ellipse::getArea() {
+    const double PI = 3.1415926535897932;
+    return radi1 * radi2*PI;
+}
+
+void Ellipse::getRadi() {
+    cout << radi1 << " " << radi2;
 }
 
 

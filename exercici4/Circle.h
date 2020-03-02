@@ -8,9 +8,9 @@
 
 
 class Circle {
-    int area;
+    float area;
 public:
-    Circle(int a);
+    Circle(float a);
     double getArea();
 
 };
