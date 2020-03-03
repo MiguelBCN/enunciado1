@@ -5,6 +5,7 @@
  *
  * Created on 28 de febrero de 2020, 22:28
  */
+//Cin >> varr1>>var2>>var3
 
 //USAR OVERLOADING? PARA LAS DOS FORMAS
 #include<iostream>
@@ -27,6 +28,7 @@ void agregarFigura(string datos, int &numCirculos, int &numElipses) {
     float radi1;
     float radi2;
     //Comprobar la  veracidad de los datos
+    
     //Añadir el contador de la forma, crear y mostrar el objeto
         
 }

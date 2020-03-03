@@ -13,13 +13,16 @@
  */
 
 #include <cstdlib>
-
+#include"Time.h"
 using namespace std;
 
 /*
  * 
  */
 int main(int argc, char** argv) {
+    try{
+        Time t2(25,4,3);
+    }
 
     return 0;
 }
