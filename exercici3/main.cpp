@@ -5,10 +5,11 @@
  *
  * Created on 26 de febrero de 2020, 22:28
  */
-
+//Tambien debo controlar cuando el usaurio meta una letra?
 
 #include<iostream>
 #include <vector>
+#include <stdexcept>
 #include "Circle.h"
 
 
@@ -19,16 +20,30 @@ int area;
 vector<string> arr_opcion = {"Salir", "Introducir circulo"};
 
 void introducirCirculo(int &contador) {
+    //Tratamos de añadir primero el circulo
     contador++;
     cout << "Circulo numero " << contador << "\n";
-
+    //Pedimos el radio y lo comprobamos
     cout << "Radi?\n";
     cin>>area;
 
-    //Creamos el objeto 
-    Circle circulo(area);
+    try {
+        if (area > 0) {
+            //Creamos el objeto 
+            Circle circulo(area);
+            cout << "El area del circulo es " << circulo.getArea() << "\n";
+        } else {
+            //Como el objeto no se creo debemos reducir el contador
 
-    cout << "El area del circulo es " << circulo.getArea() << "\n";
+            throw invalid_argument("Valor recibido no puede ser negativo ni 0");
+
+        }
+    } catch (const std::invalid_argument& e) {
+        // codi de gestió de l’excepció, en aquest exercici: missatge per consola
+        contador--;
+        cout << "Valor recibido no puede ser negativo ni 0\n";
+    }
+
 }
 
 int main() {
@@ -53,7 +68,7 @@ int main() {
 
     } while (opcion != 0);
     cout << "***FIN***\n";
-    
+
 
     return 0;
 
