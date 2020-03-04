@@ -22,6 +22,7 @@ using namespace std;
 int main(int argc, char** argv) {
     try{
         Time t2(25,4,3);
+        t2.print();
     }
 
     return 0;

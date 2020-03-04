@@ -1,4 +1,3 @@
-
 /* 
  * File:   main.cpp
  * Author: MiguelDesktop
@@ -7,54 +6,67 @@
  */
 //Cin >> varr1>>var2>>var3
 
-//USAR OVERLOADING? PARA LAS DOS FORMAS
 #include<iostream>
 #include <vector>
-#include "Circle.h"
-#include "Ellipse.h"
-#include <stdio.h> 
-#include <stdlib.h>
+#include <stdexcept>
+#include"Circle.h"
+#include"Ellipse.h"
 
 using namespace std;
 int opcion;
-int area;
 int numCirculos = 0;
 int numElipses = 0;
-string datosEntrada;
 vector<string> arr_opcion = {"Salir", "Agregar figura", "Glosario de formas"};
 
-void agregarFigura(string datos, int &numCirculos, int &numElipses) {
+void agregarFigura(int &numCirculos, int &numElipses) {
+    string forma;
+    float radio1;
+    float radio2;
 
-    //Con los datos recibidos comprobamos que sea vaidos y guardarlos en unas variables para luego ahcer una llamda al constructor adecuado
-    char forma;
-    float radi1;
-    float radi2;
-    //Comprobar la  veracidad de los datos
-    try {
-        //Comprobamos la lonmgitud
-        if (datos.size() > 2 && datos.size() < 6) {
-            //Comprobamos los caracteres y los extraemos en una variables temporales
-            if (datos.size() == 3) {
-                forma = datos[0];
-                radi1 = strtof(datos[2]);
-            } else if (datos.size() == 5) {
-                forma = datos[0];
-                radi1 = strtof(datos[2]);
-                radi2 = strtof(datos[4]);
+    //Pedimos al usuario los datos
+    cout << "Entra les dades de la teva figura ( tipus[C o E] data1 data2[buit si el tipus es C] ) \n";
 
-            } else {
-                cout << "Los datos introducidos no son validos\n";
-                }
-
-
-        } else {
-            cout << "El tamaño de los datos introducidos es incorrecto\n";
-        }
+    if (cin.get() =='C') {
+        cout << "Entraste en circulo\n";
+        cin >> forma >> radio1;
+        
     }
+    else if(cin.get()=='E')
+        cin >> forma >> radio1>>radio2;
+    //cout<<forma<<" "<<radio1<<" "<<radio2<<"\n";
 
-    //Comprobamos que los radios sean mayores a 0
-    //Añadir el contador de la forma, crear y mostrar el objeto
+    //Ahora con los parametros iniciados hacemos un if dependiendo de la forma
+    try {
+        if (forma == "e" || forma == "E") {
+            //Tratamos de crear el elipe
+            try {
+                //Tratamos de crear el objeto
+                Ellipse elipse(radio1, radio2);
+                cout << "El area es: " << elipse.getArea() << "\n";
+                numElipses++;
+            } catch (float radio) {
+                // codi de gestió de l’excepció, en aquest exercici: missatge per consola
+                cout << "EL valor del radio de la elipse" << radio << "no puede ser negativo ni 0\n";
+            }
 
+        } else if (forma == "c" || forma == "C") {
+            //Tratamos de crear el circulo
+            try {
+                //Tratamos de crear el objeto
+                Circle circulo(radio1);
+                cout << "El area es: " << circulo.getArea() << "\n";
+                numCirculos++;
+
+            } catch (float radio) {
+                // codi de gestió de l’excepció, en aquest exercici: missatge per consola
+                cout << "EL valor del radio del circulo " << radio << "no puede ser negativo ni 0\n";
+            }
+
+        } else
+            throw forma;
+    } catch (char forma) {
+        cout << "Forma introducida " << forma << " no valida\n";
+    }
 }
 
 int main() {
@@ -72,9 +84,7 @@ int main() {
                 opcion = 0;
                 break;
             case 2:
-                cout << "Entra les dades de la teva figura ( tipus[C o E] data1 data2[buit si el tipus es C] )\n";
-                cin >> datosEntrada;
-                agregarFigura(datosEntrada, numCirculos, numElipses);
+                agregarFigura(numCirculos, numElipses);
                 break;
             case 3:
                 //mosntrar contadores 

@@ -10,7 +10,8 @@
  * 
  * Created on 3 de marzo de 2020, 12:14
  */
-
+#include <stdexcept>
+#include <iostream>
 #include "Time.h"
 
 Time::Time(int h = 0, int m = 0, int s = 0) {
@@ -40,14 +41,14 @@ void Time::setHour(int h) {
 }
 
 void Time::setMinute(int m) {
-    if (h >= 0 && h <= 59)
+    if (m >= 0 && m <= 59)
         min = m;
     else
         throw invalid_argument("Invalida minuto");
 }
 
 void Time::setSecond(int s) {
-    if (h >= 0 && h <= 59)
+    if (s >= 0 && s <= 59)
         seg = s;
     else
         throw invalid_argument("Invalida segundo");

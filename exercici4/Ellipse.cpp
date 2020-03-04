@@ -16,19 +16,24 @@
 using namespace std;
 
 Ellipse::Ellipse(float a, float b) {
-    radi1 = a;
-    radi2 = b;
+    if (a > 0)
+        radio1 = a;
+    else {
+        throw a;
+    }
+    if (b > 0)
+        radio2 = a; 
+    else {
+        throw b;
+    }
 
 }
 
 double Ellipse::getArea() {
     const double PI = 3.1415926535897932;
-    return radi1 * radi2*PI;
+    return radio1 * radio2*PI;
 }
 
-void Ellipse::getRadi() {
-    cout << radi1 << " " << radi2;
-}
 
 
 

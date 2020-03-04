@@ -8,7 +8,7 @@
 
 
 class Circle {
-    float area;
+    float radio;
 public:
     Circle(float a);
     double getArea();

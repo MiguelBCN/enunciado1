@@ -28,16 +28,10 @@ void introducirCirculo(int &contador) {
     cin>>area;
 
     try {
-        if (area > 0) {
-            //Creamos el objeto 
-            Circle circulo(area);
-            cout << "El area del circulo es " << circulo.getArea() << "\n";
-        } else {
-            //Como el objeto no se creo debemos reducir el contador
-
-            throw invalid_argument("Valor recibido no puede ser negativo ni 0");
-
-        }
+        //Tratamos de crear el objeto
+        Circle circulo(area);
+        cout<<"El area es: "<<circulo.getArea()<<"\n";
+        cout<<"Circulo numero"<<contador<<"\n";
     } catch (const std::invalid_argument& e) {
         // codi de gestió de l’excepció, en aquest exercici: missatge per consola
         contador--;
@@ -68,8 +62,6 @@ int main() {
 
     } while (opcion != 0);
     cout << "***FIN***\n";
-
-
     return 0;
 
 

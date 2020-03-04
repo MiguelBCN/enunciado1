@@ -15,12 +15,12 @@
 #define ELLIPSE_H
 
 class Ellipse {
-    float radi1;
-    float radi2;
+    float radio1;
+    float radio2;
 public:
     Ellipse(float a,float b);
      double getArea();
-     void getRadi();
+
 
 private:
 

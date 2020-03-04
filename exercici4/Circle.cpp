@@ -7,15 +7,21 @@
  */
 
 #include "Circle.h"
+#include<iostream>
+using namespace std;
 
 
 Circle::Circle(float a) {
-     //area(a);
-     area=a;
+    if (a > 0) {
+        radio = a;
+    } else {
+        cout << "El radio no puede ser negativo o 0\n";
+        throw a;
+    }
+
 }
 
 double Circle::getArea() {
-    const double PI = 3.1415926535897932;
-    return double(area * area*PI);
+    const double PI = 3.141592653589793238463;
+    return double(radio * radio * PI);
 }
-
