@@ -25,16 +25,17 @@ void agregarFigura(int &numCirculos, int &numElipses) {
 
     //Pedimos al usuario los datos
     cout << "Entra les dades de la teva figura ( tipus[C o E] data1 data2[buit si el tipus es C] ) \n";
+    cin>>forma;
+    if (forma == "e" || forma == "E") {
+        cout<<"Introduzca los radios de la elipse\n";
+        cin >> radio1>>radio2;
+    } else if (forma == "c" || forma == "C") {
+        cout<<"Introduzca los radios del circulo\n";
+        cin>>radio1;
+    } else
+        cout << "Caracter introducido no valido\n";
 
-    if (cin.get() =='C') {
-        cout << "Entraste en circulo\n";
-        cin >> forma >> radio1;
-        
-    }
-    else if(cin.get()=='E')
-        cin >> forma >> radio1>>radio2;
     //cout<<forma<<" "<<radio1<<" "<<radio2<<"\n";
-
     //Ahora con los parametros iniciados hacemos un if dependiendo de la forma
     try {
         if (forma == "e" || forma == "E") {
@@ -42,11 +43,11 @@ void agregarFigura(int &numCirculos, int &numElipses) {
             try {
                 //Tratamos de crear el objeto
                 Ellipse elipse(radio1, radio2);
-                cout << "El area es: " << elipse.getArea() << "\n";
+                cout << "El area de la elipse es: " << elipse.getArea() << "\n";
                 numElipses++;
             } catch (float radio) {
                 // codi de gestió de l’excepció, en aquest exercici: missatge per consola
-                cout << "EL valor del radio de la elipse" << radio << "no puede ser negativo ni 0\n";
+                cout << "EL valor del radio de la elipse" << radio << " no puede ser negativo ni 0\n";
             }
 
         } else if (forma == "c" || forma == "C") {
@@ -54,12 +55,12 @@ void agregarFigura(int &numCirculos, int &numElipses) {
             try {
                 //Tratamos de crear el objeto
                 Circle circulo(radio1);
-                cout << "El area es: " << circulo.getArea() << "\n";
+                cout << "El area del circulo es: " << circulo.getArea() << "\n";
                 numCirculos++;
 
             } catch (float radio) {
                 // codi de gestió de l’excepció, en aquest exercici: missatge per consola
-                cout << "EL valor del radio del circulo " << radio << "no puede ser negativo ni 0\n";
+                cout << "EL valor del radio del circulo " << radio << " no puede ser negativo ni 0\n";
             }
 
         } else
