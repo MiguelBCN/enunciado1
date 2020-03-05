@@ -25,17 +25,26 @@ void agregarFigura(int &numCirculos, int &numElipses) {
 
     //Pedimos al usuario los datos
     cout << "Entra les dades de la teva figura ( tipus[C o E] data1 data2[buit si el tipus es C] ) \n";
-    cin>>forma;
+    /*cin>>forma;
     if (forma == "e" || forma == "E") {
-        cout<<"Introduzca los radios de la elipse\n";
+        cout << "Introduzca los radios de la elipse\n";
         cin >> radio1>>radio2;
     } else if (forma == "c" || forma == "C") {
-        cout<<"Introduzca los radios del circulo\n";
+        cout << "Introduzca los radios del circulo\n";
         cin>>radio1;
     } else
         cout << "Caracter introducido no valido\n";
+     
+*/
+    cin>>forma;
+    if (forma == "e") {
+        cin >> radio1>>radio2;
+    } else if (forma == "c") {
+        cin>>radio1;
+    }else
+        cout<<"El formato no es corecta";
 
-    //cout<<forma<<" "<<radio1<<" "<<radio2<<"\n";
+    cout<<forma<<" "<<radio1<<" "<<radio2<<"\n";
     //Ahora con los parametros iniciados hacemos un if dependiendo de la forma
     try {
         if (forma == "e" || forma == "E") {
