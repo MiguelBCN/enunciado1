@@ -17,7 +17,7 @@ using namespace std;
 int opcion;
 int numCirculos = 0;
 int numElipses = 0;
-// ifstream myFile;
+
 vector<string> arr_opcion = {"Salir", "Agregar figura", "Glosario de formas", "Leer de un fichero"};
 
 void agregarFigura(int &numCirculos, int &numElipses);

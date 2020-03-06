@@ -1,25 +1,22 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 
 /* 
  * File:   Circle.h
- * Author: migue
+ * Author: MiguelDesktop
  *
- * Created on 5 de marzo de 2020, 9:37
+ * Created on 5 de marzo de 2020, 17:29
  */
-
+#include "Ellipse.h"
 #ifndef CIRCLE_H
 #define CIRCLE_H
 
-class Circle {
+class Circle:public Ellipse {
 public:
-    Circle();
+    Circle(float a ,float b);
     Circle(const Circle& orig);
     virtual ~Circle();
-private:
+    //Este metodo sera heradado de elipse
+    //double getArea();
+    
 
 };
 

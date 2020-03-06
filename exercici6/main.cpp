@@ -1,4 +1,3 @@
-
 /* 
  * File:   main.cpp
  * Author: MiguelDesktop
@@ -6,14 +5,6 @@
  * Created on 26 de febrero de 2020, 22:29
  */
 
-//El elipse es la madre, hacerlos objetos dinanmicos, por ende recordar que debemos añadirles un destruccotr y un constructor copia ç
-
-/* 
- * File:   main.cpp
- * Author: MiguelDesktop
- *
- * Created on 28 de febrero de 2020, 22:28
- */
 #include<iostream>
 #include <vector>
 #include <stdexcept>
@@ -27,7 +18,6 @@ using namespace std;
 int opcion;
 int numCirculos = 0;
 int numElipses = 0;
-// ifstream myFile;
 vector<string> arr_opcion = {"Salir", "Agregar figura", "Glosario de formas", "Leer de un fichero"};
 
 void agregarFigura(int &numCirculos, int &numElipses);
@@ -74,6 +64,8 @@ void agregarFigura(int &numCirculos, int &numElipses) {
     string forma;
     float radio1;
     float radio2;
+    //Declaro al principio la elipse
+    Ellipse* fig;
 
     //Pedimos al usuario los datos
     cout << "Entra les dades de la teva figura ( tipus[C o E] data1 data2[buit si el tipus es C] ) \n";
@@ -94,9 +86,10 @@ void agregarFigura(int &numCirculos, int &numElipses) {
             //Tratamos de crear el elipe
             try {
                 //Tratamos de crear el objeto
-                Ellipse elipse(radio1, radio2);
-                cout << "El area de la elipse es: " << elipse.getArea() << "\n";
+                fig=new Ellipse(radio1, radio2);
+                cout << "El area de la elipse es: " << fig->getArea() << "\n";
                 numElipses++;
+                delete fig;
             } catch (float radio) {
                 // codi de gestió de l’excepció, en aquest exercici: missatge per consola
                 cout << "EL valor del radio de la elipse" << radio << " no puede ser negativo ni 0\n";
@@ -106,9 +99,10 @@ void agregarFigura(int &numCirculos, int &numElipses) {
             //Tratamos de crear el circulo
             try {
                 //Tratamos de crear el objeto
-                Circle circulo(radio1);
-                cout << "El area del circulo es: " << circulo.getArea() << "\n";
+                fig=new Circle(radio1,radio1);
+                cout << "El area del circulo es: " << fig->getArea() << "\n";
                 numCirculos++;
+                delete fig;
 
             } catch (float radio) {
                 // codi de gestió de l’excepció, en aquest exercici: missatge per consola
@@ -126,6 +120,7 @@ void leerFichero(int &numCirculos, int &numElipses) {
     char forma, op;
     float radio1, radio2;
     ifstream myFile;
+    Ellipse* fig;
     string rutaFichero = "ex.txt", inputFile;
     //Obtener ruta del fichero y crear ifstream
     cout << "Desea intorducir una nueva ruta de donde leer el fichero Y/N (Encaso de no se usara el por defecto)\n";
@@ -158,18 +153,20 @@ void leerFichero(int &numCirculos, int &numElipses) {
             myFile >> inputFile;
             radio2 = strtof((inputFile).c_str(),0);
             //Creo la elipse
-            Ellipse elipse(radio1, radio2);
-            cout << "El area de la elipse es: " << elipse.getArea() << "\n";
+            fig=new Ellipse(radio1,radio2);
+            cout << "El area de la elipse es: " << fig->getArea() << "\n";
             numElipses++;
+            delete fig;
         } else if (inputFile == "C" || inputFile == "c") {
             
             myFile >> inputFile;
             radio1 = strtof((inputFile).c_str(),0);
             
             //Creo el circulo
-            Circle circulo(radio1);
-            cout << "El area del circulo es: " << circulo.getArea() << "\n";
+            fig=new Circle(radio1,radio1);
+            cout << "El area del circulo es: " << fig->getArea() << "\n";
             numCirculos++;
+            delete fig;
 
         } else
             cout << "El formato de la linea no es correcto "<<inputFile<<"\n";
@@ -180,4 +177,5 @@ void leerFichero(int &numCirculos, int &numElipses) {
 
     //Cargar con un bucle linea a linea 
 }
+
 

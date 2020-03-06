@@ -1,21 +1,31 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
 
 /* 
  * File:   Circle.cpp
- * Author: migue
+ * Author: MiguelDesktop
  * 
- * Created on 5 de marzo de 2020, 9:37
+ * Created on 5 de marzo de 2020, 17:29
  */
 
 #include "Circle.h"
+#include"Ellipse.h"
+#include <iostream>
+using namespace std;
 
-Circle::Circle() {
+Circle::Circle(float a,float b) {
+    if (a > 0)
+        this->radio1 = a;
+    else {
+        throw a;
+    }
+    if (b > 0)
+        this->radio2 = a; 
+    else {
+        throw b;
+    }
+    cout<<"Soy el contructor de circulo\n";
+
 }
-
 Circle::Circle(const Circle& orig) {
 }
 

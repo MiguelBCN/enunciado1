@@ -1,26 +1,23 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 
 /* 
  * File:   Ellipse.h
- * Author: migue
+ * Author: MiguelDesktop
  *
- * Created on 5 de marzo de 2020, 9:37
+ * Created on 5 de marzo de 2020, 17:29
  */
 
 #ifndef ELLIPSE_H
 #define ELLIPSE_H
 
 class Ellipse {
+protected:
+    float radio1;
+    float radio2;
 public:
-    Ellipse();
+    Ellipse(float a=0 ,float b=0);
     Ellipse(const Ellipse& orig);
+    virtual double getArea();
     virtual ~Ellipse();
-private:
-
 };
 
 #endif /* ELLIPSE_H */
