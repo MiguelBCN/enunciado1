@@ -4,7 +4,6 @@
  * File:   main.cpp
  * Author: Miguel Huayllas
  *
- * Created on 26 de febrero de 2020, 22:28
  */
 
 #include <cstdlib>
@@ -12,9 +11,6 @@
 
 using namespace std;
 
-/*
- * 
- */
 int main(int argc, char** argv) {
     string nombre;
     int opcion = 2;

@@ -25,5 +25,6 @@ Circle::Circle(const Circle& orig) {
 }
 
 Circle::~Circle() {
+    cout<<"Soy el destructor de circulo\n";
 }
 

@@ -2,9 +2,7 @@
  * File:   main.cpp
  * Author: MiguelDesktop
  *
- * Created on 28 de febrero de 2020, 22:28
  */
-//Cin >> varr1>>var2>>var3
 
 #include<iostream>
 #include <vector>
@@ -13,39 +11,30 @@
 #include"Ellipse.h"
 
 using namespace std;
+
+//Principales variables
 int opcion;
 int numCirculos = 0;
 int numElipses = 0;
 vector<string> arr_opcion = {"Salir", "Agregar figura", "Glosario de formas"};
 
 void agregarFigura(int &numCirculos, int &numElipses) {
+    //Variables para inicializar el objeto
     string forma;
     float radio1;
     float radio2;
 
     //Pedimos al usuario los datos
     cout << "Entra les dades de la teva figura ( tipus[C o E] data1 data2[buit si el tipus es C] ) \n";
-    /*cin>>forma;
+    cin>>forma;
     if (forma == "e" || forma == "E") {
-        cout << "Introduzca los radios de la elipse\n";
         cin >> radio1>>radio2;
     } else if (forma == "c" || forma == "C") {
-        cout << "Introduzca los radios del circulo\n";
         cin>>radio1;
     } else
-        cout << "Caracter introducido no valido\n";
-     
-*/
-    cin>>forma;
-    if (forma == "e") {
-        cin >> radio1>>radio2;
-    } else if (forma == "c") {
-        cin>>radio1;
-    }else
-        cout<<"El formato no es corecta";
+        cout << "El formato no es corecta";
 
-    cout<<forma<<" "<<radio1<<" "<<radio2<<"\n";
-    //Ahora con los parametros iniciados hacemos un if dependiendo de la forma
+    //Inicializamos el contructor dependiendo del tipo de forma que se introdujo
     try {
         if (forma == "e" || forma == "E") {
             //Tratamos de crear el elipe

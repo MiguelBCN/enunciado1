@@ -22,6 +22,14 @@ CND_ARTIFACT_PATH_Release=dist/Release/Cygwin-Windows/exercici7
 CND_PACKAGE_DIR_Release=dist/Release/Cygwin-Windows/package
 CND_PACKAGE_NAME_Release=exercici7.tar
 CND_PACKAGE_PATH_Release=dist/Release/Cygwin-Windows/package/exercici7.tar
+# noDeubg configuration
+CND_PLATFORM_noDeubg=Cygwin-Windows
+CND_ARTIFACT_DIR_noDeubg=dist/noDeubg/Cygwin-Windows
+CND_ARTIFACT_NAME_noDeubg=exercici7
+CND_ARTIFACT_PATH_noDeubg=dist/noDeubg/Cygwin-Windows/exercici7
+CND_PACKAGE_DIR_noDeubg=dist/noDeubg/Cygwin-Windows/package
+CND_PACKAGE_NAME_noDeubg=exercici7.tar
+CND_PACKAGE_PATH_noDeubg=dist/noDeubg/Cygwin-Windows/package/exercici7.tar
 #
 # include compiler specific variables
 #

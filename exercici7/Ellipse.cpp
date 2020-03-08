@@ -27,6 +27,7 @@ Ellipse::Ellipse(const Ellipse& orig) {
 }
 
 Ellipse::~Ellipse() {
+    cout<<"Soy el destructor de elipse\n";
 }
 
 double Ellipse::getArea() {

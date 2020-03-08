@@ -22,8 +22,6 @@ public:
      double getArea();
 
 
-private:
-
 };
 
 #endif /* ELLIPSE_H */
